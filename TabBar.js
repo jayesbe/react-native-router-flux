@@ -28,7 +28,7 @@ export default class TabBar extends React.Component {
             });
         }
         return (
-            <Tabs style={[{backgroundColor:'white'}, this.props.tabBarStyle]} onSelect={this.onSelect.bind(this)} {...this.props} selected={selected}>
+            <Tabs style={[{backgroundColor:'white'}, this.props.tabBarStyle]} onSelect={this.onSelect.bind(this)} {...this.props} selected={selected.sceneKey}>
                 {React.Children.map(this.props.children, el=>{
                     const schema = this.props.router && this.props.router.schemas[el.props.schema] ? this.props.router.schemas[el.props.schema] : {};
                     let props = {...schema, ...el.props};
